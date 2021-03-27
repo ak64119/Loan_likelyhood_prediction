@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="UTF-8">
+
+	<title>Loan Likelyhood Prediction</title>
+
+  	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+	<div class="login">
+		<h1>Loan Likelyhood Prediction</h1>
+
+		<!-- Main Input for receiving data for our model -->
+		<form action="{{url_for('predict')}}" method="post">
+		<input type="text" name="Age" placeholder="Age" required="required" /><br>
+		<input type="text" name="Prv_Loan_Flag" placeholder="Previous Loan: 1:Yes 0:No" required="required" /><br>
+		<input type="text" name="Avg_amt_CA_txn" placeholder="Average Current Account Transaction" required="required" /><br>
+		<input type="text" name="Num_txns" placeholder="Number of Transaction" required="required" /><br>
+		<input type="text" name="Lst_txn_amt" placeholder="Last Transaction Amount" required="required" /><br>
+		
+
+		<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+		</form>
+	<br>
+   <br>
+  
+   </div>
+ {{prediction_text}}
+
+</body>
+</html>
+
+
+
+
